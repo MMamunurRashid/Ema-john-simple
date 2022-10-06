@@ -1,17 +1,25 @@
 import React, { useEffect, useState } from "react";
 import Cart from "../Cart/Cart";
-import { addToDb, getStoredCart } from "../../utilities/fakedb";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+
+import {
+  addToDb,
+  deleteShoppingCart,
+  getStoredCart,
+} from "../../utilities/fakedb";
 import Product from "../Product/Product";
 import "./Shop.css";
+import { Link, useLoaderData } from "react-router-dom";
 
 const Shop = () => {
-  const [products, setProducts] = useState([]);
+  const products = useLoaderData();
   const [cart, setCart] = useState([]);
-  useEffect(() => {
-    fetch("products.json")
-      .then((res) => res.json())
-      .then((data) => setProducts(data));
-  }, []);
+
+  const clearCart = () => {
+    setCart([]);
+    deleteShoppingCart();
+  };
 
   useEffect(() => {
     const storedCart = getStoredCart();
@@ -55,7 +63,14 @@ const Shop = () => {
         ))}
       </div>
       <div className="cart-container">
-        <Cart cart={cart}></Cart>
+        <Cart cart={cart} clearCart={clearCart}>
+          <Link className="link-review-orders" to="/orders">
+            <button className="btn-review-orders">
+              Review Order
+              <FontAwesomeIcon icon={faArrowRight}></FontAwesomeIcon>
+            </button>
+          </Link>
+        </Cart>
       </div>
     </div>
   );

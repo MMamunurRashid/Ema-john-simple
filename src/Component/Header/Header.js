@@ -3,18 +3,19 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRightToBracket } from "@fortawesome/free-solid-svg-icons";
 import logo from "../../images/Logo.svg";
 import "./Header.css";
+import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <nav className="header-nav">
       <img src={logo} alt="" />
       <div>
-        <a href="/Shopping">Shopping</a>
-        <a href="/Orders">Orders</a>
-        <a href="/Inventory">Inventory</a>
-        <a href="/AboutUs">About Us</a>
-        <a href="/LogIn">
+        <Link to="/">Shopping</Link>
+        <Link to="/orders">Orders</Link>
+        <Link to="/inventory">Inventory</Link>
+        <Link to="/aboutUs">About Us</Link>
+        <Link to="/logIn">
           Log In <FontAwesomeIcon icon={faRightToBracket}></FontAwesomeIcon>
-        </a>
+        </Link>
       </div>
     </nav>
   );
