@@ -6,3 +6,25 @@
   text-decoration: none;
   color: orange;
 }
+.btn-shipping {
+  margin-top: 10px;
+  width: 90%;
+  height: 35px;
+  font-size: 18px;
+  font-weight: 500;
+  color: whitesmoke;
+  background-color: #ff3030;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 10px;
+}
+.btn-shipping:hover {
+  background-color: #ff9900;
+}
+.link-shipping {
+  text-decoration: none;
+}
