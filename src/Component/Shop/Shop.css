@@ -33,6 +33,24 @@
 .cart-container {
   background-color: rgba(255, 153, 0, 0.3);
 }
+
+.pagination {
+  margin: auto;
+  margin-bottom: 50px;
+}
+.pagination button {
+  margin-right: 10px;
+  padding: 15px;
+  border-radius: 5px;
+  border: 0;
+}
+.pagination button:hover {
+  background-color: #ff9900;
+}
+.pagination .selected {
+  background-color: goldenrod;
+  font-weight: bold;
+}
 @media screen and (max-width: 920px) {
   .products-container {
     grid-template-columns: repeat(2, 1fr);
