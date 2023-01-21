@@ -18,12 +18,12 @@ function App() {
       children: [
         {
           path: "/",
-          // loader: () => fetch("http://localhost:5000/products"),
+          // loader: () => fetch("https://y-three-ruddy.vercel.app/products"),
           element: <Shop></Shop>,
         },
         {
           path: "/shop",
-          // loader: () => fetch("http://localhost:5000/products"),
+          // loader: () => fetch("https://y-three-ruddy.vercel.app/products"),
           element: <Shop></Shop>,
         },
         {

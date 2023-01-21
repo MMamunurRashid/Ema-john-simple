@@ -23,7 +23,7 @@ const Shop = () => {
   const pages = Math.ceil(count / size);
 
   useEffect(() => {
-    const url = `http://localhost:5000/products?page=${page}&size=${size}`;
+    const url = `https://y-three-ruddy.vercel.app/products?page=${page}&size=${size}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
